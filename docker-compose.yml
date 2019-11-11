@@ -1,0 +1,20 @@
+version: "3"
+services:
+  mongo:
+    image: mongo:4
+    command: --wiredTigerCacheSizeGB 2
+  elastic:
+    image: elasticsearch:5.6
+  ada:
+    # replace this with the published version from docker hub once it exists
+    build: .
+    environment:
+      - ADA_MONGO_DB_URI=mongodb://mongo:27017/ada?rm.nbChannelsPerNode=20
+      - ADA_ELASTIC_DB_HOST=elastic:9200
+    volumes:
+      - ./config/ada/custom.conf:/ada/conf/custom.conf
+    expose:
+      - 8080
+    depends_on:
+      - mongo
+      - elastic
