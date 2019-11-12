@@ -13,8 +13,8 @@ services:
       - ADA_ELASTIC_DB_HOST=elastic:9200
     volumes:
       - ./config/ada/custom.conf:/ada/conf/custom.conf
-    expose:
-      - 8080
+    ports:
+      - 8080:8080
     depends_on:
       - mongo
       - elastic
