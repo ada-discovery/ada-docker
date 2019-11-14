@@ -34,6 +34,7 @@ above please consult https://docs.docker.com/install/ and https://docs.docker.co
 If docker and git are working correctly, please run the following commands:
 ```
 > git clone https://github.com/ada-discovery/ada-docker.git
+> cd ada-docker
 > docker-compose up
 ```
 The last command might require root access to connect with the Docker engine. 
