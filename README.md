@@ -1,11 +1,14 @@
 # ada-docker
 
 ### About
-ADA Discovery Analytics supports manual and Docker installation. 
+Ada Discovery Analytics supports manual and Docker installation. 
 Manual installation is recommended in environments where full control over every
-stack component, such as Elasticsearch, MongoDB, Spark, and ADA itself is required. 
+stack component, such as Elasticsearch, MongoDB, Spark, and Ada itself is required. 
 Docker however, is much easier to set up and provides a highly reproducible 
-environment. Consequently, Docker is recommended in most cases.
+environment. Consequently, Docker is recommended in most cases. 
+
+Please note: Partial usage is also possible. For example, it is perfectly acceptable 
+to use your own Spark or DB cluster, but use Docker for everything else.
 
 ### Requirements
 
