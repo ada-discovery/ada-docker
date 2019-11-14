@@ -1,3 +1,7 @@
+# DO NOT MODIFY THIS FILE MANUALLY TO CONFIGURE YOUR ADA DEPLOYMENT
+# ALL CONFIGURATION HAPPENS VIA ENVIRONMENT VARIABLES
+# READ THE README!
+
 FROM openjdk:8
 ENV ADA_VERSION=0.8.0
 RUN groupadd --system ada && useradd --no-log-init --create-home --shell /bin/bash --gid ada ada
@@ -12,6 +16,5 @@ RUN apt-get update \
     && rm ada-web-$ADA_VERSION.zip \
     && mkdir /home/ada/datasetimport/ \
     && chown --recursive ada:ada /home/ada/datasetimport/
-COPY ada.conf ada-web/conf/custom.conf
 COPY entrypoint.sh .
 ENTRYPOINT ["/bin/bash", "entrypoint.sh"]

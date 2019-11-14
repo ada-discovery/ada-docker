@@ -1,3 +1,7 @@
+# DO NOT MODIFY THIS FILE MANUALLY TO CONFIGURE YOUR ADA DEPLOYMENT
+# ALL CONFIGURATION HAPPENS VIA ENVIRONMENT VARIABLES
+# READ THE README!
+
 version: "3"
 services:
   mongo:
@@ -7,25 +11,29 @@ services:
       - mongo-data:/data/db
     ports:
       - 27017:27017
+    restart: always
   elastic:
     image: elasticsearch:5.6
     volumes:
       - elastic-data:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
+    restart: always
   ada:
     # replace this with the published version from docker hub once it exists
     build: .
     environment:
-      - ADA_MONGO_DB_URI=mongodb://mongo:27017/ada?rm.nbChannelsPerNode=20
-      - ADA_ELASTIC_DB_HOST=elastic:9200
+      - ADA_MONGO_DB_URI=$ADA_MONGO_DB_URI
+      - ADA_ELASTIC_DB_HOST=$ADA_ELASTIC_DB_HOST
     volumes:
+      - $ADA_CONF:ada-web/conf/custom.conf
       - ada-datasetimport:/home/ada/datasetimport
     ports:
       - 8080:8080
     depends_on:
       - mongo
       - elastic
+    restart: always
 volumes:
   elastic-data:
     driver: local
