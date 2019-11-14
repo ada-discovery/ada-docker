@@ -19,7 +19,6 @@ services:
     environment:
       - ADA_MONGO_DB_URI=mongodb://mongo:27017/ada?rm.nbChannelsPerNode=20
       - ADA_ELASTIC_DB_HOST=elastic:9200
-      - ADA_IMPORT_DIR=/home/ada/datasetimport
     volumes:
       - ./ada.conf:/home/ada/ada-web/conf/custom.conf
       - ada-datasetimport:/home/ada/datasetimport
