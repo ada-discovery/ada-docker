@@ -9,6 +9,4 @@ RUN wget https://webdav-r3lab.uni.lu/public/ada-artifacts/ada-web-$ADA_VERSION.z
     && mv ada-web-$ADA_VERSION/ ada-web/ \
     && chown --recursive ada:ada ada-web/ \
     && rm ada-web-$ADA_VERSION.zip
-# the tail to /dev/null prevents the container from exiting prematurely
-# because runme always runs detached (needs to be an option)
 ENTRYPOINT ["/bin/bash", "entrypoint.sh"]
