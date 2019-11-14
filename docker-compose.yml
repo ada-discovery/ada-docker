@@ -21,7 +21,7 @@ services:
       - ADA_ELASTIC_DB_HOST=elastic:9200
       - ADA_IMPORT_DIR=/home/ada/datasetimport
     volumes:
-      - ./build/ada.conf:/home/ada/ada-web/conf/custom.conf
+      - ./ada.conf:/home/ada/ada-web/conf/custom.conf
       - ada-datasetimport:/home/ada/datasetimport
     ports:
       - 8080:8080
