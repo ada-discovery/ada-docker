@@ -20,7 +20,6 @@ services:
       - ADA_MONGO_DB_URI=mongodb://mongo:27017/ada?rm.nbChannelsPerNode=20
       - ADA_ELASTIC_DB_HOST=elastic:9200
     volumes:
-      - ./ada.conf:/home/ada/ada-web/conf/custom.conf
       - ada-datasetimport:/home/ada/datasetimport
     ports:
       - 8080:8080
