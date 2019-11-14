@@ -26,7 +26,7 @@ services:
       - ADA_MONGO_DB_URI=$ADA_MONGO_DB_URI
       - ADA_ELASTIC_DB_HOST=$ADA_ELASTIC_DB_HOST
     volumes:
-      - $ADA_CONF:ada-web/conf/custom.conf
+      - $ADA_CONF:/home/ada/ada-web/conf/custom.conf
       - ada-datasetimport:/home/ada/datasetimport
     ports:
       - 8080:8080
