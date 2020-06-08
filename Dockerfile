@@ -3,7 +3,7 @@
 # READ THE README!
 
 FROM openjdk:8
-ENV ADA_VERSION=0.8.0
+ENV ADA_VERSION=0.8.1
 RUN groupadd --system ada && useradd --no-log-init --create-home --shell /bin/bash --gid ada ada
 WORKDIR /home/ada/
 RUN apt-get update \
